@@ -1,13 +1,14 @@
 {
   "name": "brain-games-quasko",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "console mini games",
   "keywords": [
     "brain-games",
     "hexlet"
   ],
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"
