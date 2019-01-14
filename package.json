@@ -1,8 +1,11 @@
 {
   "name": "brain-games-quasko",
   "version": "0.0.2",
-  "description": "",
-  "main": "index.js",
+  "description": "console mini games",
+  "keywords": [
+    "brain-games",
+    "hexlet"
+  ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -25,13 +28,13 @@
   },
   "homepage": "https://github.com/quasko/project-lvl1-s412#readme",
   "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
+  "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
-    "readline-sync": "^1.4.9"
-  },
-  "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
