@@ -4,7 +4,10 @@
 [![Build Status](https://travis-ci.org/quasko/project-lvl1-s412.svg?branch=master)](https://travis-ci.org/quasko/project-lvl1-s412)
 
 ## brain-even
-[![asciicast](https://asciinema.org/a/Cv4fKk83pp2mhCAbqnD8x3Ocz.svg)](https://asciinema.org/a/Cv4fKk83pp2mhCAbqnD8x3Ocz)
+[![asciicast](https://asciinema.org/a/221602.svg)](https://asciinema.org/a/221602)
 
 ## brain-calc
-[![asciicast](https://asciinema.org/a/kOOqOCcujsoMZFOh0vfKDhQ1F.svg)](https://asciinema.org/a/kOOqOCcujsoMZFOh0vfKDhQ1F)
+[![asciicast](https://asciinema.org/a/221605.svg)](https://asciinema.org/a/221605)
+
+## brain-gcd
+[![asciicast](https://asciinema.org/a/NX7lzPprK2vGEETKUhHLR6GgN.svg)](https://asciinema.org/a/NX7lzPprK2vGEETKUhHLR6GgN)
