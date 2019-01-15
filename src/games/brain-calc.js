@@ -1,6 +1,8 @@
+import { helloUser, gameEngine } from '..';
 
 const operations = ['+', '-', '*'];
 const maxRandomValue = 20;
+const helpMessage = 'What is the result of the expression?';
 const getRandom = () => Math.round(Math.random() * maxRandomValue);
 const getRandomOperation = signs => signs[Math.floor(Math.random() * signs.length)];
 
@@ -25,4 +27,7 @@ const calcTask = () => {
   return { question, correctAnswer };
 };
 
-export default calcTask;
+export default () => {
+  const user = helloUser(helpMessage);
+  gameEngine(calcTask, user);
+};
