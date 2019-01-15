@@ -1,31 +1,37 @@
 import readlineSync from 'readline-sync';
 
 const maxRandomValue = 100;
-
-const getUserName = () => readlineSync.question('May I have your name? ');
+const maxCorrectAnswers = 3;
 
 const endGameMessage = (isWin, user) => (isWin ? `Congratulations, ${user}!` : `Let's try again, ${user}!`);
 
 const getRandom = () => Math.round(Math.random() * maxRandomValue);
 
+const isEven = number => number % 2 === 0;
+
 export const helloUser = () => {
   console.log('Welcome to the Brain Games!');
-  const userName = getUserName();
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   return userName;
 };
 
-export const isEvenGame = (user, correntCount) => {
-  if (correntCount === 3) {
-    return console.log(endGameMessage(true, user));
+const isEvenGame = (correntCount) => {
+  if (correntCount === maxCorrectAnswers) {
+    return true;
   }
-  const number = getRandom();
-  const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
-  const userAnswer = readlineSync.question(`Question: ${number} \nYour answer: `);
+  const question = getRandom();
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  const userAnswer = readlineSync.question(`Question: ${question} \nYour answer: `);
   if (userAnswer !== correctAnswer) {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return console.log(endGameMessage(false, user));
+    return false;
   }
   console.log('Correct!');
-  return isEvenGame(user, correntCount + 1);
+  return isEvenGame(correntCount + 1);
+};
+
+export default () => {
+  const user = helloUser();
+  console.log(endGameMessage(isEvenGame(0), user));
 };
