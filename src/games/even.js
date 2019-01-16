@@ -1,4 +1,4 @@
-import { gameEngine } from '..';
+import gameEngine from '..';
 import getRandom from '../utils';
 
 const maxRandomValue = 100;
