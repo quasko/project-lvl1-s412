@@ -12,7 +12,7 @@ const progressionTask = () => {
   const stepValue = getRandom(maxStep, minStep);
   const startValue = getRandom(maxStartValue);
   const missedValueIndex = getRandom(progressionLength - 1);
-  const progressionArray = Array(10).fill(0)
+  const progressionArray = Array(progressionLength).fill(0)
     .reduce((acc, item, index) => [...acc, acc[index] + stepValue], [startValue]);
   const correctAnswer = progressionArray[missedValueIndex];
   progressionArray[missedValueIndex] = '..';
