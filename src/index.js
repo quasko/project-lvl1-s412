@@ -2,17 +2,18 @@ import readlineSync from 'readline-sync';
 
 const maxCorrectAnswers = 3;
 
-export const helloUser = (helpMessage) => {
+export const helloUser = (gameDescription) => {
   console.log('Welcome to the Brain Games!');
-  if (helpMessage) {
-    console.log(`${helpMessage}\n`);
+  if (gameDescription) {
+    console.log(`${gameDescription}\n`);
   }
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
   return userName;
 };
 
-export const gameEngine = (taskFunction, user) => {
+export const gameEngine = (taskFunction, description) => {
+  const user = helloUser(description);
   const gameStep = (currentCount) => {
     if (currentCount === maxCorrectAnswers) {
       return true;

@@ -1,19 +1,17 @@
-import { helloUser, gameEngine } from '..';
+import { gameEngine } from '..';
+import getRandom from '../utils';
 
 const maxRandomValue = 100;
-const helpMessage = 'Answer "yes" if number even otherwise answer "no".';
-
-const getRandom = () => Math.round(Math.random() * maxRandomValue);
+const description = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = number => number % 2 === 0;
 
 const evenTask = () => {
-  const question = getRandom();
+  const question = getRandom(maxRandomValue);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   return { question, correctAnswer };
 };
 
 export default () => {
-  const user = helloUser(helpMessage);
-  gameEngine(evenTask, user);
+  gameEngine(evenTask, description);
 };

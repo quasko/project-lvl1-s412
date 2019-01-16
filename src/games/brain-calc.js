@@ -1,10 +1,9 @@
-import { helloUser, gameEngine } from '..';
+import { gameEngine } from '..';
+import getRandom from '../utils';
 
 const operations = ['+', '-', '*'];
 const maxRandomValue = 20;
-const helpMessage = 'What is the result of the expression?';
-const getRandom = () => Math.round(Math.random() * maxRandomValue);
-const getRandomOperation = signs => signs[Math.floor(Math.random() * signs.length)];
+const description = 'What is the result of the expression?';
 
 const calculate = (numbers, sign) => {
   switch (sign) {
@@ -20,14 +19,13 @@ const calculate = (numbers, sign) => {
 };
 
 const calcTask = () => {
-  const sign = getRandomOperation(operations);
-  const numbers = [getRandom(), getRandom()];
+  const sign = operations[getRandom(operations.length - 1)];
+  const numbers = [getRandom(maxRandomValue), getRandom(maxRandomValue)];
   const question = `${numbers[0]} ${sign} ${numbers[1]}`;
   const correctAnswer = calculate(numbers, sign);
   return { question, correctAnswer };
 };
 
 export default () => {
-  const user = helloUser(helpMessage);
-  gameEngine(calcTask, user);
+  gameEngine(calcTask, description);
 };
