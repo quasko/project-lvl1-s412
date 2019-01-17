@@ -13,7 +13,7 @@ export default (taskFunction, description) => {
     }
     const { question, correctAnswer } = taskFunction();
     const userAnswer = readlineSync.question(`Question: ${question} \nYour answer: `);
-    if (userAnswer !== correctAnswer.toString()) {
+    if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       return false;
     }
